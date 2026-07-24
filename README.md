@@ -39,6 +39,7 @@ Details and scorecard: [ONEPAGER.md](ONEPAGER.md).
 | File | Description |
 |------|-------------|
 | [ONEPAGER.md](ONEPAGER.md) | Product brief, MVP, safety, hardware scorecard |
+| [FUNDING.md](FUNDING.md) | Funding map: institutional → NIH/AHRQ → SBIR → ARPA-H |
 | [crisis-mirror-architecture.html](crisis-mirror-architecture.html) | Interactive dark architecture diagram |
 | [assets/crisis-mirror-architecture.png](assets/crisis-mirror-architecture.png) | Architecture diagram (PNG) |
 | [crisis-mirror-flow.excalidraw](crisis-mirror-flow.excalidraw) | Editable flow (open on [excalidraw.com](https://excalidraw.com)) |
