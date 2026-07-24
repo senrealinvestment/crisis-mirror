@@ -2,18 +2,21 @@
 
 **To:** Leadership, Department of Anesthesiology  
 **Virginia Commonwealth University (VCU)**  
-**From:** Sergio [Last name], MD — Transplant ICU / Critical Care Anesthesiology  
+**From:** Sergio Navarrete, MD — Transplant ICU / Critical Care Anesthesiology  
 **Date:** July 2026  
 **Re:** Departmental pilot support for *Crisis Mirror* — camera-free cognitive companion for critical care simulation  
 
 **Requested amount:** **$12,500** (preferred) · **$7,500** (minimum viable)  
 **Period:** 12 months from award  
 
+**Sim lab / education lead (collaborator):** Mike Kazior, MD — Simulation lab education, Department of Anesthesiology  
+**Resident collaborator:** Marjo Beltoja, MD  
+
 ---
 
 ## Request in one paragraph
 
-I am requesting modest departmental support to build and test **Crisis Mirror** in the simulation environment: a **camera-free** smart-glasses + phone system that delivers short, advisory cognitive-forcing cues (protocol checks) during critical decompensation scenarios for anesthesiology and critical care learners. The goal is education and human-factors measurement—not autonomous diagnosis, not bedside clinical deployment, and **not** wearable video recording. Funds cover starter hardware, basic software/build time support, and a structured sim evaluation with residents/fellows.
+I am requesting modest departmental support to build and test **Crisis Mirror** in the VCU Anesthesiology simulation environment, in collaboration with **Mike Kazior, MD** (simulation lab education) and resident **Marjo Beltoja, MD**. Crisis Mirror is a **camera-free** smart-glasses + phone system that delivers short, advisory cognitive-forcing cues (protocol checks) during critical decompensation scenarios for anesthesiology and critical care learners. The goal is education and human-factors measurement—not autonomous diagnosis, not bedside clinical deployment, and **not** wearable video recording. Hardware path: **Brilliant Labs Halo with camera hard-off** (onboard bone conduction + HUD + mics). Funds cover starter hardware, basic software/build support, and a structured sim evaluation with residents/fellows.
 
 ---
 
@@ -23,18 +26,18 @@ I am requesting modest departmental support to build and test **Crisis Mirror** 
 |--------|-------------------------|
 | In crisis, learners freeze or fixate; attendings carry the cognitive load | Discrete **≤8-word HUD + tone** cues that force the next check (“consider vasoplegia vs bleed”) |
 | Generic sim debriefs are delayed and variable | Immediate, protocol-tied prompts + after-action **helpful / accurate** labels |
-| Wearable cameras are a PHI/culture non-starter | **No wearable camera by design** — audio + display only |
+| Wearable cameras are a PHI/culture non-starter | **No wearable camera by design** — Halo camera **hard-off**; audio + display only |
 | Transplant ICU excellence needs reproducible teaching of rare decompensations | Scenario pack starts with **liver reperfusion instability** and expandable ICU crises |
 
-This aligns with departmental missions in **education, patient safety culture, and innovation**—with a path to society grants and later extramural funding once we have pilot data.
+This aligns with departmental missions in **education, patient safety culture, and innovation**—with a path to society grants and later extramural funding once we have pilot data. Housing the pilot in the **departmental simulation lab under Dr. Kazior** keeps learner access, curriculum fit, and equipment stewardship inside Anesthesiology education.
 
 ---
 
 ## What we will build (12-month pilot)
 
-1. **Sim-only platform** — faculty-triggered or gated audio → phone “edge brain” → glasses HUD + tone  
+1. **Sim-only platform** — faculty-triggered or gated audio → phone “edge brain” → Halo HUD + bone-conduction tone  
 2. **Local protocol pack** — VCU/Tx ICU–relevant cards (not cloud-only “AI doctor”)  
-3. **Safety rules** — advisory language only; no orders; no EMR writeback  
+3. **Safety rules** — advisory language only; no orders; no EMR writeback; **camera hard-off clinical/sim profile**  
 4. **Label loop** — after each scenario: *Helpful? Accurate?* (+ optional short note)  
 5. **Metrics** — cue latency, %helpful, %accurate, learner preference on vs off, no increase in harmful actions in sim  
 
@@ -46,13 +49,13 @@ This aligns with departmental missions in **education, patient safety culture, a
 
 | In scope | Out of scope (this request) |
 |----------|-----------------------------|
-| Simulation lab / education research | Live bedside patient care deployment |
-| Camera-free glasses + phone | Wearable video / continuous cloud recording |
+| Simulation lab / education research (Dr. Kazior’s lab) | Live bedside patient care deployment |
+| Halo glasses (camera hard-off) + phone | Wearable video capture or continuous cloud recording |
 | Advisory cognitive forcing | Autonomous diagnosis or treatment |
-| Single-department pilot + resident collaborator | Multi-center trial or FDA submission |
+| Department pilot + resident collaborator (Dr. Beltoja) | Multi-center trial or FDA submission |
 | Architecture and open working notes already public as concept pack | Commercial product launch |
 
-Concept architecture and product brief already maintained at:  
+Concept architecture and product brief:  
 https://github.com/senrealinvestment/crisis-mirror  
 
 ---
@@ -63,37 +66,37 @@ https://github.com/senrealinvestment/crisis-mirror
 
 | Item | Est. cost | Notes |
 |------|-----------|--------|
-| Smart glasses ×1–2 (camera-free path) | $1,200–$2,400 | Even Realities **G2** (no camera; tone via phone/buds) **or** Brilliant Labs **Halo** with **camera hard-off** + bone conduction |
-| Bone-conduction earbuds / audio accessories | $200–$400 | Required if G2 path (no onboard speakers) |
-| Dedicated pilot iPhone or iPad (or case + mount) | $0–$1,000 | Prefer existing device if available; else refurbished/pilot unit |
-| App / software prototype build (contractor or protected time support) | $4,000–$5,500 | Phone edge app: gate → protocol match → cue → label UI |
-| Simulation scenario development (3–5 scenarios) + materials | $1,000 | Faculty/resident time or education stipend |
+| Brilliant Labs **Halo** smart glasses ×1–2 | $600–$1,400 | ~$299–$349/unit band; **camera hard-off** for all pilot use; onboard bone conduction + HUD + mics |
+| Protective case / spare cables / Rx or stock lens needs | $100–$300 | As required for faculty/learner fit |
+| Dedicated pilot iPhone or iPad (or mount only) | $0–$1,000 | Prefer existing device if available; else refurbished/pilot unit |
+| App / software prototype build (contractor or protected time support) | $4,500–$6,000 | Phone edge app: gate → protocol match → cue → label UI; Halo pair + cam-off enforcement |
+| Simulation scenario development (3–5 scenarios) + materials | $1,000 | Drs. Navarrete, Kazior, Beltoja — time/stipend per policy |
 | Small learner incentive / sim session support | $500 | Food/gift cards per institutional policy |
-| Contingency / replacements / shipping | $500–$1,000 | |
+| Contingency / shipping / replacements | $500–$1,000 | |
 | **Total** | **~$12,500** | |
 
 ### Minimum viable — **$7,500**
 
 | Item | Est. cost |
 |------|-----------|
-| Glasses ×1 + audio accessory | $1,500 |
-| Software prototype (narrower scope) | $4,000 |
+| Halo ×1 + case/cables | $500–$800 |
+| Software prototype (narrower scope) | $4,500 |
 | Scenario pack + sim sessions | $1,500 |
-| Contingency | $500 |
-| **Total** | **$7,500** |
+| Contingency | $500–$700 |
+| **Total** | **~$7,500** |
 
-**Phone-only first** (no glasses) can start immediately with **$4,000–$5,000** if hardware purchase must wait—HUD mocked on phone screen + headphones—still produces fundable pilot data.
+**Phone-only first** (no glasses) can start immediately with **$4,000–$5,000** if hardware purchase must wait—HUD mocked on phone screen + headphones—still produces fundable pilot data while Halo is ordered.
 
 ---
 
 ## Deliverables (department gets)
 
-1. Working **sim prototype** demonstrated to education leadership  
+1. Working **sim prototype** demonstrated in the Anesthesiology simulation lab  
 2. **3+ scenario cards** relevant to anesthesiology / Tx ICU  
 3. **Pilot report** (6–10 pages): methods, metrics, learner feedback, limitations  
 4. **Abstract draft** for a regional/national meeting (education or critical care)  
 5. Clear go / no-go recommendation for society grant applications  
-6. Inventory of equipment remains with the Department for ongoing education use  
+6. Equipment inventory remains with the **Department of Anesthesiology simulation program** for ongoing education use  
 
 ---
 
@@ -101,20 +104,20 @@ https://github.com/senrealinvestment/crisis-mirror
 
 | Quarter | Milestones |
 |---------|------------|
-| **Q1** | Hardware selection · phone app v0 · 2 scenarios · IRB/education determination as required |
-| **Q2** | First learner sessions · label data · cue quality iteration |
-| **Q3** | Expand to 3–5 scenarios · on vs off comparison sessions |
-| **Q4** | Pilot report · abstract · society grant submissions · equipment handoff plan |
+| **Q1** | Halo procurement · camera-off profile verified · phone app v0 · 2 scenarios · IRB/education determination as required |
+| **Q2** | First learner sessions (Dr. Beltoja liaison) · label data · cue quality iteration |
+| **Q3** | Expand to 3–5 scenarios · on vs off comparison sessions in sim lab |
+| **Q4** | Pilot report · abstract · society grant submissions · equipment stewardship plan with Dr. Kazior |
 
 ---
 
 ## Regulatory, privacy, and ethics posture
 
 - **Not a medical device claim** in this pilot — simulation / education / QI framing  
-- **No wearable camera** — reduces PHI and unit-culture risk  
+- **No wearable camera use** — Halo camera **hard-off**; no capture APIs in pilot software  
 - **Advisory cues only** — human remains the decision-maker  
 - Will follow VCU policies for education research / QI / IRB as directed by departmental and institutional guidance  
-- No continuous cloud streaming of clinical audio; short buffers; sim environment first  
+- No continuous cloud streaming of clinical audio; short buffers; **simulation environment first**  
 
 ---
 
@@ -122,9 +125,9 @@ https://github.com/senrealinvestment/crisis-mirror
 
 Small internal support unlocks:
 
-1. Hardware in hand and a demo faculty can see  
+1. Hardware in the sim lab faculty can see and touch  
 2. Data for **society education grants** (next external step)  
-3. A credible story for later **NIH/AHRQ** digital-health or education research with a co-PI  
+3. A credible story for later **NIH/AHRQ** digital-health or education research  
 4. Visibility for VCU Anesthesiology as an innovator in **high-stakes cognitive training**
 
 This is intentionally **not** a request for a full research center or commercial spin-out budget.
@@ -135,10 +138,10 @@ This is intentionally **not** a request for a full research center or commercial
 
 | Role | Individual | Contribution |
 |------|------------|--------------|
-| PI / clinical lead | Sergio [Last name], MD | Design, protocols, sim faculty, oversight |
-| Resident collaborator | [Name — interested resident] | Scenario running, learner liaison, labels |
-| Technical build | TBD (contractor / collaborator / protected support) | Phone app + cue pipeline |
-| Education advisor | [Vice Chair Education / Sim Director — TBD] | Curriculum fit, learner access |
+| PI / clinical lead | **Sergio Navarrete, MD** | Design, Tx ICU protocols, clinical oversight, scholarly output |
+| Simulation lab / education collaborator | **Mike Kazior, MD** | Sim lab leadership, curriculum fit, learner access, equipment stewardship |
+| Resident collaborator | **Marjo Beltoja, MD** | Scenario running, learner liaison, labeling, day-to-day pilot ops |
+| Technical build | TBD (contractor / collaborator / protected support) | Phone app + Halo pairing + cue pipeline |
 
 ---
 
@@ -150,6 +153,7 @@ This is intentionally **not** a request for a full research center or commercial
 | Learner preference (on vs off) | Majority prefer **on** for ≥1 scenario class |
 | Harmful action increase in sim | **None** attributable to cues |
 | Cue latency | Majority of cues &lt; ~2 seconds after trigger |
+| Camera policy compliance | **100%** sessions with camera hard-off verified |
 | Scholarly output | ≥1 abstract submitted |
 | External follow-on | ≥1 society grant application submitted |
 
@@ -157,9 +161,9 @@ This is intentionally **not** a request for a full research center or commercial
 
 ## Ask
 
-I respectfully request **$12,500** in departmental innovation / education pilot funds (**$7,500** minimum viable) to execute the Crisis Mirror simulation pilot over 12 months, with equipment retained by the Department of Anesthesiology for ongoing educational use.
+I respectfully request **$12,500** in departmental innovation / education pilot funds (**$7,500** minimum viable) to execute the Crisis Mirror simulation pilot over 12 months, in collaboration with **Dr. Mike Kazior** (simulation lab education) and **Dr. Marjo Beltoja** (resident collaborator), with equipment retained by the Department of Anesthesiology simulation program for ongoing educational use.
 
-I am happy to present a 10-minute overview at a faculty or education meeting and to adjust budget lines to departmental preferences (e.g., phone-only first).
+I am happy to present a 10-minute overview with Dr. Kazior at a faculty or education meeting and to adjust budget lines to departmental preferences (e.g., phone-only first while Halo is ordered).
 
 ---
 
@@ -174,4 +178,4 @@ I am happy to present a 10-minute overview at a faculty or education meeting and
 
 ---
 
-*Crisis Mirror · VCU Department of Anesthesiology · Internal pilot request · Education / simulation only · Not a clinical device deployment*
+*Crisis Mirror · VCU Department of Anesthesiology · Internal pilot request · Education / simulation only · Halo camera hard-off · Not a clinical device deployment*
