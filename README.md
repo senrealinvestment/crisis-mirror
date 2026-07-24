@@ -40,6 +40,7 @@ Details and scorecard: [ONEPAGER.md](ONEPAGER.md).
 |------|-------------|
 | [ONEPAGER.md](ONEPAGER.md) | Product brief, MVP, safety, hardware scorecard |
 | [FUNDING.md](FUNDING.md) | Funding map: institutional → NIH/AHRQ → SBIR → ARPA-H |
+| [VCU-ANESTHESIOLOGY-FUNDS-REQUEST.md](VCU-ANESTHESIOLOGY-FUNDS-REQUEST.md) | Internal funds request — VCU Dept of Anesthesiology |
 | [crisis-mirror-architecture.html](crisis-mirror-architecture.html) | Interactive dark architecture diagram |
 | [assets/crisis-mirror-architecture.png](assets/crisis-mirror-architecture.png) | Architecture diagram (PNG) |
 | [crisis-mirror-flow.excalidraw](crisis-mirror-flow.excalidraw) | Editable flow (open on [excalidraw.com](https://excalidraw.com)) |
