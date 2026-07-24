@@ -2,13 +2,13 @@
 
 **Smart glasses ambient AI — cognitive companion for clinical medicine**  
 Real-time cost + cue quality feedback loop  
-*From Sergio’s whiteboard sketch → product brief*
+*Audio + HUD only — no wearable camera (PHI / unit optics)*
 
 ---
 
 ## One sentence
 
-Ambient video + audio from clinician smart glasses feed an OpenEvidence-class reasoner that delivers a **discrete multimodal cue** (tone / haptic / HUD). The clinician acts; we log whether the cue was **helpful** and **accurate** for post-hoc training.
+Ambient **audio** from clinician smart glasses (or phone) feeds a local protocol brain on a nearby phone/iPad that delivers a **discrete cue** (short HUD text + tone). The clinician acts; we log whether the cue was **helpful** and **accurate** for offline training.
 
 ---
 
@@ -16,9 +16,9 @@ Ambient video + audio from clinician smart glasses feed an OpenEvidence-class re
 
 | Stage | What happens | Non-negotiable |
 |---|---|---|
-| **Sense** | POV video ambient context + ambient listening | On-device gate when possible; minimize continuous cloud stream |
-| **Reason** | Cognitive-forcing suggestion (not autopilot orders) | Grounded in **local protocol pack first**; evidence API second |
-| **Cue** | Tone / vibration + short visual text | Discrete in ICU; no patient-facing spectacle |
+| **Sense** | Ambient listening (glasses mics and/or phone) | **No wearable camera.** Gate when possible; no continuous cloud stream |
+| **Reason** | Cognitive-forcing suggestion (not autopilot orders) | Local protocol pack first; evidence API second |
+| **Cue** | Tone + short visual HUD text | Discrete in ICU; no patient-facing spectacle |
 | **Act** | Natural verbal response or clinical action | Human remains decision-maker |
 | **Label** | Was cue helpful? Accurate? Cost/latency? | Required for every fired cue eventually |
 | **Train** | Offline policy / model update | Never silent online self-modification at bedside |
@@ -29,80 +29,107 @@ Ambient video + audio from clinician smart glasses feed an OpenEvidence-class re
 
 | Layer | Hardware | Job |
 |---|---|---|
-| **1 · Glasses** | Halo-class smart glasses | Eyes/ears + discreet HUD/tone. **Tiny** computer only. |
-| **2 · Edge** | iPhone / iPad nearby (pocket/belt) | **Real-time brain:** gate → local protocols → safety → send cue. Label taps after. |
-| **3 · Cloud (optional)** | Private cloud + OpenEvidence / UpToDate-class APIs | **Deep consult** after a trigger or on demand — stripped questions, not continuous room audio. |
+| **1 · Glasses** | Display + mics (+ bone conduction if available) | Hear the room + show/play short cue. **Tiny** computer. **No camera.** |
+| **2 · Edge** | iPhone / iPad nearby (pocket/belt) | **Real-time brain:** gate → local protocols → safety → send cue. Label taps after. Audio-out fallback if glasses lack speakers. |
+| **3 · Cloud (optional)** | Private cloud + OpenEvidence / UpToDate-class APIs | **Deep consult** after a trigger or on demand — stripped questions, not room audio dumps. |
 
-**Rule:** fast whisper from the pocket binder; broad literature is the consultant on call — not every second of listening.
+**Rule:** fast whisper from the pocket binder; broad literature is the consultant on call.
+
+---
+
+## Why no camera (design law)
+
+A face-worn camera in a transplant ICU is a **PHI + consent + culture** problem, not just a tech feature:
+
+- Patients, families, and staff in frame without clean consent
+- Harder IRB / compliance / “what is that recording?” optics
+- Little extra value for v0 cognitive-forcing if **speech + protocol context** carry the trigger
+
+**Crisis Mirror v1 is audio-in → brain-on-phone → HUD + tone out.**  
+Vision is out of scope until a separate, explicit, approved program exists.
 
 ---
 
 ## What this is / is not
 
 **Is**
-- Cognitive forcing function for decompensations (sim + learners first)
-- Ambient co-pilot with a closed quality loop
-- Candidate hardware path for Tx ICU excellence / Crisis Mirror
+- Cognitive forcing for decompensations (sim + learners first)
+- Ambient **listening** co-pilot with a closed quality loop
+- Camera-free wearable path for Tx ICU / regulated care
 
 **Is not**
+- Body-worn video surveillance
 - Autodiagnosis or automatic order entry
 - Always-on cloud wiretap of the unit
 - A replacement for board-certified judgment
 
 ---
 
-## Hardware map (candidates you named)
+## Hardware map (camera-free)
 
-Sources: Brilliant Labs public Halo materials / reviews (2025–2026); Even Realities G2 reviews & support specs (2025–2026). Verify price/availability before buy.
+**Honest gap:** There is **no perfect** open-source glass today that is all of: *no camera + mics + bone-conduction speakers + HUD + fully open stack*.
 
-### Scorecard vs sketch requirements
+We pick a **primary clinical path** and an **open build path**.
 
-| Requirement from sketch | Brilliant Labs **Halo** | Even Realities **G2** |
+Sources: Brilliant Labs Halo materials; Even Realities G2 support/reviews (mics, no camera, no speakers on core G2); MentraOS ecosystem notes. Verify price/availability before buy.
+
+### Scorecard (camera-free requirements)
+
+| Requirement | Brilliant Labs **Halo** (open) | Even Realities **G2** (privacy-native) |
 |---|---|---|
-| **Visual cue (HUD text)** | Yes — color microOLED ~20° FoV, glance/tilt to see; +2 to −6 diopter optic | Yes — binocular waveguide, mono green 640×350, **27.5° FoV**, ~1200 nits (strong daylight text) |
-| **Tone / audio out** | Yes — dual bone-conduction speakers | **No speakers** on core G2 A/B (reviews) |
-| **Vibration / haptic** | IMU + tap; true haptic weak/unclear — may need phone/ring | Optional **Even R1 ring** (~$249) for control/haptic-ish UX |
-| **Ambient listening (mics)** | Yes — dual mics + audio activity detection | Limited / app-dependent; not the design center |
-| **Video ambient context** | Yes — onboard optical/POV sensing (low-power AI camera path) | **No camera** on standard G2 (privacy-forward, breaks full sketch alone) |
-| **On-device AI headroom** | Strong — Alif B1 CPU+NPU, ZephyrOS, open HW/SW, Noa agent | Phone-centric stack; less open hack surface |
-| **All-day clinical wear** | ~40 g, up to ~**14 h** claimed | **~36 g**, up to **~2 days** regular use + case (7× recharges) |
-| **Prescription** | Optic + lens options (stock AR coat; Rx path) | Full Rx frames (extra cost) |
-| **Price (street/MSRP ballpark)** | ~**$299–349** (launch/preorder band; limited drops) | **$599** frames (+ Rx; ring extra) |
-| **Open / buildable** | **Best-in-class** for this project (GitHub / Lua / Zephyr) | Closed consumer product + app store |
-| **Fit to full Crisis Mirror sketch** | **Primary hardware** — sense + cue on one device | **Secondary / display specialist** — needs phone or second sensor for A/V |
+| **No wearable camera** | **Policy/firmware: camera OFF / unused** (hardware has one — must be hard-disabled for clinical mode) | **Native — no camera** |
+| **Visual cue (HUD)** | Yes — color microOLED | Yes — binocular waveguide, mono green **640×350**, **27.5° FoV**, strong daylight text |
+| **Ambient mics** | Yes | Yes — **four mics** (reviews/specs) |
+| **Tone / audio out on glass** | Yes — **dual bone conduction** | **No speakers** on core G2 → use **phone / BC earbuds / AirPods** for earcons |
+| **Open / hackable** | **Best** — open HW/SW, Zephyr, SDKs | Consumer product; **MentraOS**-class app layer helps |
+| **All-day wear** | ~40 g, up to ~**14 h** claimed | ~**36 g**, multi-day with case (claims) |
+| **Price (ballpark)** | ~**$299–349** | ~**$599** (+ Rx; optional ring) |
+| **Fit to camera-free Crisis Mirror** | **Open prototype** if camera is truly off | **Clinical wear favorite** for unit optics |
 
-### Recommendation
+### Recommendation (updated)
 
-1. **Build prototype on Halo** (or Halo-class open glasses): only candidate that natively covers *video + listen + tone + visual* without bolting on a second body-worn camera. Open stack matches “post-hoc training + custom cognitive forcing.”
-2. **Keep G2 as display reference / alternate form factor** if discrete daylight text and multi-day battery matter more than onboard sensing — pair with phone mic/camera **only in sim**, not as the long-term bedside architecture unless privacy policy forbids glass cameras.
-3. **Do not buy both yet.** Spike sim-lab cue UX on Halo first; rent/borrow G2 only if Halo HUD readability fails under ICU lighting.
+1. **Clinical / unit optics primary: Even Realities G2**  
+   - No camera by design  
+   - Strong discrete HUD + mics  
+   - Pair with **phone edge brain** + **bone-conduction earbuds or phone earcon** for tone (G2 has no speakers)
 
-### Hard gaps on both
+2. **Open-source build primary: Brilliant Labs Halo with camera hard-off**  
+   - Only serious open stack for custom cue firmware  
+   - Onboard **bone conduction** = cleaner “tone on glass”  
+   - **Clinical mode requirement:** camera powered off, no capture APIs, no LED/record UX — treat any camera use as a different product
 
-- Neither is a medical device. Clinical use = research / QI / education framing + IRB/ethics as required.
-- PHI: prefer on-device redaction, short buffers, BAA’d cloud only for evidence queries stripped of identifiers.
-- Haptics on Halo may be too weak for “tap the shoulder” cues → fallback: bone-conduction earcon patterns + HUD flash.
+3. **Do not depend on POV video** in protocols, diagrams, or IRB framing.
+
+4. **Sim lab:** phone-only path works before any glasses arrive (mic + headphones + on-screen “HUD”).
+
+### Hard gaps
+
+- Neither is a medical device. Use = education / QI / research framing + IRB as required.
+- G2 needs a **separate audio-out** plan for earcons.
+- Halo needs a **written camera-off clinical profile** (not “we pinky-promise not to look”).
+- PHI: short buffers, on-edge redaction, BAA only for stripped evidence queries.
 
 ---
 
 ## MVP slice (4 weeks of real work, not theater)
 
-1. **Sim only** — scripted decompensation scenarios (hypotension post-reperfusion, rising lactate, airway risk, etc.).
-2. **Cue types v0** — 3 earcons + ≤8-word HUD text; no free-form speech to clinician during crisis.
-3. **Reasoner v0** — protocol card pack + OpenEvidence (or equivalent) behind a strict schema: `{trigger, differential_nudge, next_check, confidence}`.
-4. **Label UI** — after scenario: 2 taps — Helpful Y/N, Accurate Y/N, optional 5-sec voice note.
-5. **Metrics** — cue latency p50/p95, $/cue, %helpful, %accurate, clinician interruptibility score.
+1. **Sim only** — scripted decompensations (post-reperfusion hypotension, rising lactate, airway risk, etc.).
+2. **Cue types v0** — 3 earcons + ≤8-word HUD text; no free-form speech-to-clinician during crisis.
+3. **Reasoner v0** — protocol card pack + optional OpenEvidence behind `{trigger, differential_nudge, next_check, confidence}`.
+4. **Label UI** — Helpful Y/N, Accurate Y/N, optional 5-sec note.
+5. **Metrics** — cue latency p50/p95, $/cue, %helpful, %accurate, interruptibility.
 
-**Exit criterion:** learners prefer Crisis Mirror on vs off on ≥1 scenario class with no increase in harmful actions.
+**Exit criterion:** learners prefer on vs off on ≥1 scenario class with no increase in harmful actions.
 
 ---
 
-## Safety / ethics firewall (carry into every build)
+## Safety / ethics firewall
 
 - Advisory language only (“consider”, “check”, “diff includes”).
-- No automatic documentation into EMR without explicit commit.
-- Role separation if donor / prior-recipient edge cases appear in ambient audio (align with Prior Recipient→Donor Ethical Firewall).
-- Full audit log of cues shown + labels; deletable retention policy.
+- **No wearable camera** in v1 product definition.
+- No automatic EMR write without explicit commit.
+- Role separation if donor / prior-recipient edge cases appear in ambient audio (Prior Recipient→Donor Ethical Firewall).
+- Full audit log of cues + labels; deletable retention.
 
 ---
 
@@ -110,18 +137,20 @@ Sources: Brilliant Labs public Halo materials / reviews (2025–2026); Even Real
 
 | File | Purpose |
 |---|---|
-| `crisis-mirror-architecture.html` | Dark tech architecture diagram (open in browser) |
-| `crisis-mirror-flow.excalidraw` | Editable hand-drawn flow (drop on excalidraw.com) |
+| `crisis-mirror-architecture.html` | Architecture diagram (open in browser) |
+| `crisis-mirror-flow.excalidraw` | Editable flow (excalidraw.com) |
 | `ONEPAGER.md` | This brief |
+| `assets/original-sketch.jpg` | Original whiteboard (historical; video path retired) |
 
 ---
 
 ## Next decisions for Sergio
 
-1. Halo preorder / unit for sim lab — yes/no?
+1. **G2 vs Halo (camera-off)** for first sim-lab unit — or phone-only first?
 2. First scenario pack: liver reperfusion instability vs generic ICU decompensation?
 3. Evidence backend: OpenEvidence API vs local protocol YAML first?
+4. Audio-out for G2 path: BC earbuds vs phone speaker vs skip earcon and HUD-only?
 
 ---
 
-*Crisis Mirror • Tx ICU • Link / Hermes*
+*Crisis Mirror • Tx ICU • Link / Hermes • camera-free v1*
