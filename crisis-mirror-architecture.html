@@ -205,21 +205,21 @@
         <text x="872" y="494" fill="#94a3b8" font-size="10" text-anchor="middle">after trigger / on demand</text>
         <text x="872" y="512" fill="#64748b" font-size="9" text-anchor="middle">stripped question only</text>
 
-        <!-- ========== GUTTER B y=560..620 — all long-range links live here ========== -->
-        <!-- cue-up: right rail outside content, orthogonal only -->
-        <path d="M 1032 358 L 1080 358 L 1080 132 L 782 132"
+        <!-- ========== GUTTER B y=560..620 — two parallel lanes, labels above lines ========== -->
+        <!-- cue-up: far-right rail → into Cue out (not through text) -->
+        <path d="M 1032 358 L 1088 358 L 1088 132 L 782 132"
               fill="none" stroke="#fbbf24" stroke-width="1.7" marker-end="url(#m-amber)"/>
-        <text x="1088" y="250" fill="#fbbf24" font-size="9" transform="rotate(90 1088 250)">cue up</text>
+        <text x="1096" y="260" fill="#fbbf24" font-size="9" transform="rotate(90 1096 260)">cue up</text>
 
-        <!-- labels → train: left rail then along gutter midline -->
-        <path d="M 100 532 L 100 590 L 900 590 L 900 628"
-              fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#m-amber)"/>
-        <text x="320" y="582" fill="#fbbf24" font-size="9">labels → offline training</text>
-
-        <!-- deep → cloud: from deep box bottom into gutter then down -->
-        <path d="M 872 532 L 872 560 L 420 560 L 420 628"
+        <!-- deep → cloud: upper gutter lane -->
+        <path d="M 872 532 L 872 548 L 420 548 L 420 628"
               fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#m-slate)"/>
-        <text x="520" y="552" fill="#94a3b8" font-size="9">de-identified query</text>
+        <text x="560" y="542" fill="#94a3b8" font-size="9">de-identified query</text>
+
+        <!-- labels → train: lower gutter lane (clear of deep path) -->
+        <path d="M 100 532 L 100 600 L 900 600 L 900 628"
+              fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#m-amber)"/>
+        <text x="300" y="592" fill="#fbbf24" font-size="9">labels → offline training</text>
 
         <!-- ========== L3 + offline y=628..800 ========== -->
         <rect x="48" y="628" width="620" height="172" rx="12" fill="rgba(148,163,184,0.06)" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="7,4"/>
