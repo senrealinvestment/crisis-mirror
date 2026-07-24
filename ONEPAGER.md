@@ -17,11 +17,23 @@ Ambient video + audio from clinician smart glasses feed an OpenEvidence-class re
 | Stage | What happens | Non-negotiable |
 |---|---|---|
 | **Sense** | POV video ambient context + ambient listening | On-device gate when possible; minimize continuous cloud stream |
-| **Reason** | Cognitive-forcing suggestion (not autopilot orders) | Grounded in evidence API / local protocol pack |
+| **Reason** | Cognitive-forcing suggestion (not autopilot orders) | Grounded in **local protocol pack first**; evidence API second |
 | **Cue** | Tone / vibration + short visual text | Discrete in ICU; no patient-facing spectacle |
 | **Act** | Natural verbal response or clinical action | Human remains decision-maker |
 | **Label** | Was cue helpful? Accurate? Cost/latency? | Required for every fired cue eventually |
 | **Train** | Offline policy / model update | Never silent online self-modification at bedside |
+
+---
+
+## Where the brain lives (3 layers)
+
+| Layer | Hardware | Job |
+|---|---|---|
+| **1 · Glasses** | Halo-class smart glasses | Eyes/ears + discreet HUD/tone. **Tiny** computer only. |
+| **2 · Edge** | iPhone / iPad nearby (pocket/belt) | **Real-time brain:** gate → local protocols → safety → send cue. Label taps after. |
+| **3 · Cloud (optional)** | Private cloud + OpenEvidence / UpToDate-class APIs | **Deep consult** after a trigger or on demand — stripped questions, not continuous room audio. |
+
+**Rule:** fast whisper from the pocket binder; broad literature is the consultant on call — not every second of listening.
 
 ---
 

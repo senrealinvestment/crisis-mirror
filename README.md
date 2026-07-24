@@ -7,7 +7,17 @@ Real-time cue + cost/quality feedback loop for transplant ICU / critical care.
 
 ## Concept
 
-Ambient video + audio from clinician smart glasses → OpenEvidence-class reasoning → discrete multimodal cue (tone / haptic / HUD) → clinician action → post-hoc labels (*helpful?* *accurate?*) for training.
+Ambient video + audio from clinician smart glasses → **phone/iPad edge brain** (local protocol pack + safety gate) → discrete multimodal cue (tone / haptic / HUD) → clinician action → post-hoc labels (*helpful?* *accurate?*) for **offline** training.
+
+Optional **OpenEvidence / UpToDate-class** APIs = deep consult after a trigger — not continuous cloud listening.
+
+### Where the brain lives
+
+| Layer | Device | Role |
+|-------|--------|------|
+| Thin wearable | Smart glasses | Sense + deliver cue |
+| Edge brain | iPhone / iPad nearby | Real-time detect + local protocols + safety |
+| Deep consult | Secure cloud APIs | Broader evidence on demand |
 
 ## Artifacts
 
